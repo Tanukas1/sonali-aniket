@@ -1,0 +1,568 @@
+/* ==========================================================================
+   Reference Website Component Styles
+   Recreated pixel-perfect from riteshreet.lovable.app
+   ========================================================================== */
+
+/* 1. Envelope & Wax Seal Opening Screen */
+.opening-stage {
+  background: var(--wine);
+  width: 100%;
+  height: 100svh;
+  min-height: 570px;
+  position: relative;
+  overflow: hidden;
+}
+
+.opening-stage-hidden {
+  display: none;
+}
+
+.cover-image {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.seal-hit {
+  z-index: 22;
+  touch-action: manipulation;
+  width: min(42vw, 230px);
+  min-width: 130px;
+  height: min(42vw, 230px);
+  min-height: 130px;
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cover-instruction {
+  color: var(--primary-foreground);
+  letter-spacing: 0.22em;
+  text-align: center;
+  text-shadow: 0 1px 8px var(--wine);
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-size: 10px;
+  font-weight: 500;
+  display: flex;
+  position: absolute;
+  bottom: 5.5%;
+  left: 0;
+  right: 0;
+}
+
+.instruction-rule {
+  opacity: 0.65;
+  background: currentColor;
+  width: 20px;
+  height: 1px;
+  display: block;
+}
+
+/* 2. Opening Video & Audio Controls */
+.opening-video {
+  z-index: 40;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100svh;
+  transition: opacity 2s;
+  position: fixed;
+  inset: 0;
+}
+
+.opening-video.video-visible {
+  opacity: 1;
+  transition: none;
+}
+
+.opening-video.video-fading {
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.sound-toggle {
+  z-index: 50;
+  width: 42px;
+  height: 42px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* 3. Invitation Pages & Artwork Slices */
+.invitation-pages {
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.invitation-pages.pages-visible {
+  opacity: 1;
+}
+
+.invitation-art-page {
+  aspect-ratio: 1860 / 8454;
+  width: min(100%, 620px);
+  margin: 0 auto;
+  position: relative;
+  container-type: inline-size;
+}
+
+.art-slice {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transition: opacity 1.2s, transform 1.2s;
+  transform: translateY(22px);
+}
+
+.reveal-on-scroll.page-in-view {
+  opacity: 1;
+  transform: none;
+}
+
+.page-art {
+  object-fit: fill;
+  width: 100%;
+  max-width: none;
+  display: block;
+  position: absolute;
+}
+
+/* 4. Interactive Scratch Date Section */
+.art-scratch {
+  justify-content: space-between;
+  align-items: center;
+  gap: 3%;
+  width: 76%;
+  height: 4.6%;
+  display: flex;
+  position: absolute;
+  top: 42.9%;
+  left: 12%;
+}
+
+.scratch-heart {
+  place-items: center;
+  width: 30%;
+  height: 100%;
+  display: grid;
+  position: relative;
+}
+
+.heart-outline {
+  width: 100%;
+  height: 100%;
+  fill: var(--paper);
+  stroke: var(--wine);
+  stroke-width: 1.2px;
+  opacity: 0.9;
+  position: absolute;
+  inset: 0;
+}
+
+.heart-value {
+  z-index: 1;
+  font: 600 5.4cqw / 1 var(--font-numbers);
+  color: var(--wine);
+  font-variant-numeric: lining-nums tabular-nums;
+  position: relative;
+}
+
+.heart-canvas {
+  z-index: 2;
+  touch-action: none;
+  cursor: crosshair;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.heart-reveal {
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.heart-reveal:focus-visible {
+  opacity: 1;
+  pointer-events: auto;
+  outline: 2px solid var(--wine);
+}
+
+/* 5. Countdown Section */
+.art-countdown {
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 7.4%;
+  display: flex;
+  position: absolute;
+  top: 51.3%;
+  left: 5%;
+}
+
+.art-countdown h2 {
+  font: 400 8cqw / 1.2 var(--font-script);
+  color: var(--wine);
+  margin: 0 0 3cqw;
+}
+
+.countdown-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2cqw;
+  width: 100%;
+  display: grid;
+}
+
+.countdown-unit {
+  border: 1px solid var(--gold);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  height: 18cqw;
+  display: flex;
+  background: var(--paper);
+  border-radius: 6px;
+  box-shadow: 0 3px 12px var(--gold);
+}
+
+@supports (color: color-mix(in lab, red, red)) {
+  .countdown-unit {
+    border: 1px solid color-mix(in oklch, var(--gold) 55%, transparent);
+    background: color-mix(in oklch, var(--paper) 38%, var(--background));
+    box-shadow: 0 3px 12px color-mix(in oklch, var(--gold) 9%, transparent);
+  }
+}
+
+.countdown-number {
+  font: 500 7.8cqw / 1.1 var(--font-numbers);
+  color: var(--wine);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.countdown-label {
+  letter-spacing: 0;
+  color: var(--primary);
+  margin-top: 4px;
+  font-size: 1.9cqw;
+}
+
+/* 6. Venue & Map Link Section */
+.art-map {
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: 86%;
+  height: 10%;
+  display: flex;
+  position: absolute;
+  top: 31.5%;
+  left: 7%;
+}
+
+.map-ornament {
+  color: var(--gold);
+  letter-spacing: 0.35em;
+  font-size: 15px;
+}
+
+.venue-map-link {
+  letter-spacing: 0.14em;
+  min-height: clamp(54px, 11vw, 72px);
+  box-shadow: 0 9px 24px var(--wine);
+  border-radius: 2px;
+  padding: 0 clamp(28px, 8vw, 58px);
+  font-size: clamp(12px, 2.8vw, 16px);
+}
+
+@supports (color: color-mix(in lab, red, red)) {
+  .venue-map-link {
+    box-shadow: 0 9px 24px color-mix(in oklch, var(--wine) 15%, transparent);
+  }
+}
+
+.map-caption {
+  color: var(--wine);
+  letter-spacing: 0.14em;
+  font-size: 10px;
+}
+
+/* 7. Closing Family Message Section */
+.art-closing {
+  text-align: center;
+  width: 84%;
+  height: 12.5%;
+  color: var(--wine);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 82%;
+  left: 8%;
+}
+
+.art-closing > span:first-child {
+  color: var(--gold);
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.art-closing p {
+  font: italic 500 clamp(20px, 5.1vw, 30px) / 1.12 var(--font-display);
+  margin: 2px 0;
+}
+
+.art-closing small {
+  letter-spacing: 0.18em;
+  margin-top: 13px;
+  font-size: 9px;
+}
+
+.closing-families {
+  font: 600 clamp(14px, 3.7vw, 23px) / 1.1 var(--font-display);
+  margin-top: 8px;
+}
+
+.closing-last-line {
+  font: italic 500 clamp(12px, 3.2vw, 19px) / 1.1 var(--font-display);
+  margin-top: 3px;
+}
+
+/* 8. Atmospheric Animation Effects (Petals & Sparkles) */
+.invitation-effects {
+  z-index: 45;
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+
+.falling-petals,
+.falling-sparkles {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+}
+
+.falling-petals img {
+  top: -60px;
+  left: calc(mod(var(--seed) * 29 + 7, 100) * 1%);
+  opacity: 0;
+  width: 26px;
+  height: 26px;
+  animation: petal-fall calc(19s + var(--seed) * 0.8s) linear infinite;
+  animation-delay: calc(var(--seed) * -3.7s);
+  position: absolute;
+}
+
+.falling-petals img:nth-child(3n) {
+  width: 19px;
+  height: 19px;
+}
+
+@keyframes petal-fall {
+  0% {
+    opacity: 0;
+    transform: translate(-20px, -60px) rotate(-25deg);
+  }
+  10% {
+    opacity: 0.38;
+  }
+  50% {
+    transform: translate(25px, 50svh) rotate(110deg) rotateY(35deg);
+  }
+  88% {
+    opacity: 0.38;
+  }
+  to {
+    opacity: 0;
+    transform: translate(-10px, calc(100svh + 90px)) rotate(240deg);
+  }
+}
+
+.falling-sparkles i {
+  top: -20px;
+  left: calc(mod(var(--seed) * 37 + 3, 100) * 1%);
+  background: var(--gold);
+  clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
+  opacity: 0;
+  width: 7px;
+  height: 7px;
+  animation: gold-drift calc(16s + var(--seed) * 0.35s) linear infinite;
+  animation-delay: calc(var(--seed) * -2.3s);
+  position: absolute;
+}
+
+.falling-sparkles i:nth-child(3n) {
+  width: 4px;
+  height: 4px;
+}
+
+@keyframes gold-drift {
+  0% {
+    opacity: 0;
+    transform: translate(0);
+  }
+  15% {
+    opacity: 0.18;
+  }
+  50% {
+    opacity: 0.09;
+  }
+  80% {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 0;
+    transform: translate(40px, calc(100svh + 40px)) rotate(160deg);
+  }
+}
+
+.touch-sparkles {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+}
+
+.touch-sparkles i {
+  --angle: calc(var(--piece) * 137deg);
+  background: var(--gold);
+  clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
+  width: 9px;
+  height: 9px;
+  animation: 1.4s ease-out both touch-shimmer;
+  position: absolute;
+}
+
+@keyframes touch-shimmer {
+  0% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  15% {
+    opacity: 0.38;
+  }
+  to {
+    opacity: 0;
+    transform: translate(calc(cos(var(--angle)) * 65px), calc(sin(var(--angle)) * 65px - 20px)) scale(0.3) rotate(75deg);
+  }
+}
+
+.heart-confetti {
+  z-index: 8;
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+}
+
+.heart-confetti i {
+  --angle: calc(var(--piece) * 137deg);
+  --radius: calc(100px + mod(var(--piece), 5) * 22px);
+  background: var(--gold);
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+  width: 15px;
+  height: 15px;
+  animation: 2.3s cubic-bezier(0.15, 0.65, 0.25, 1) both heart-burst;
+  animation-delay: calc(mod(var(--piece), 6) * 24ms);
+  position: absolute;
+  top: 40%;
+  left: 50%;
+}
+
+.heart-confetti i:nth-child(3n) {
+  background: var(--wine);
+  clip-path: none;
+  border-radius: 70% 10% 65% 35%;
+  width: 18px;
+  height: 22px;
+}
+
+.heart-confetti i:nth-child(5n) {
+  background: var(--accent);
+  width: 10px;
+  height: 10px;
+}
+
+@keyframes heart-burst {
+  0% {
+    opacity: 0;
+    transform: translate(0) scale(0.2);
+  }
+  10% {
+    opacity: 0.9;
+  }
+  to {
+    opacity: 0;
+    transform: translate(calc(cos(var(--angle)) * var(--radius)), calc(sin(var(--angle)) * var(--radius) + 90px)) rotate(280deg) scale(0.6);
+  }
+}
+
+/* 9. Responsive Adjustments */
+@media (width <= 600px) {
+  .opening-stage {
+    min-height: 0;
+  }
+  .cover-instruction {
+    gap: 8px;
+    font-size: 9px;
+    bottom: 6%;
+  }
+  .instruction-rule {
+    width: 12px;
+  }
+  .art-countdown h2 {
+    margin-bottom: 10px;
+  }
+  .art-map {
+    gap: 8px;
+  }
+  .venue-map-link {
+    min-height: 54px;
+    padding: 0 24px;
+  }
+}
+
+/* 10. Accessibility: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .invitation-pages,
+  .invitation-art-page,
+  .opening-video {
+    transition-duration: 0.01ms;
+  }
+  .reveal-on-scroll {
+    opacity: 1;
+    transition: none;
+    transform: none;
+  }
+  .invitation-effects,
+  .heart-confetti {
+    display: none;
+  }
+}
+

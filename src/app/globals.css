@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@import "../styles/components.css";
+
+:root {
+  --background: oklch(100% 0 0);
+  --foreground: oklch(31% .051 35);
+  --card: oklch(99% .01 82);
+  --card-foreground: oklch(31% .051 35);
+  --popover: oklch(99% .01 82);
+  --popover-foreground: oklch(31% .051 35);
+  --primary: oklch(39% .12 13);
+  --primary-foreground: oklch(98% .013 84);
+  --secondary: oklch(93% .025 82);
+  --secondary-foreground: oklch(39% .12 13);
+  --muted: oklch(94% .014 82);
+  --muted-foreground: oklch(52% .045 36);
+  --accent: oklch(75% .075 77);
+  --accent-foreground: oklch(31% .051 35);
+  --destructive: oklch(56% .2 25);
+  --border: oklch(75% .055 73);
+  --input: oklch(80% .025 80);
+  --ring: oklch(65% .095 75);
+  --gold: oklch(63% .085 77);
+  --wine: oklch(36% .13 8);
+  --paper: oklch(97.6% .021 86);
+  --scratch-gold-start: oklch(75% .06 78);
+  --scratch-gold-middle: oklch(88% .052 82);
+  --scratch-gold-end: oklch(64% .085 74);
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Jost", sans-serif;
+  --font-numbers: "Lora", Georgia, serif;
+  --font-script: "Great Vibes", cursive;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-wine: var(--wine);
+  --color-paper: var(--paper);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
