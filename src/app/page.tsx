@@ -64,7 +64,7 @@ export default function Home() {
         >
           <InvitationCard
             src="/images/invitation/invitation-two-hq.webp"
-            alt="Radisson Blu Hotel Jaipur, with wardrobe suggestions for Haldi, Sangeet, and Wedding"
+            alt="Hotel G R International, Nagmatiya, Gaya, with wardrobe suggestions for Haldi, Sangeet, and Wedding"
             boundaries={[0, 26, 43, 62, 78, 100]}
           />
           <Venue />

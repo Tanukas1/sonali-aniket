@@ -55,7 +55,7 @@ export default function Envelope({
       >
         <img
           className="cover-image"
-          src="/images/envelope/seal-cover.jpeg"
+          src="/images/envelope/seal-cover.webp"
           alt="Burgundy wedding envelope with a wax seal"
         />
         {stage === "cover" && (
@@ -78,7 +78,7 @@ export default function Envelope({
       <video
         ref={videoRef}
         className={`opening-video ${hasStartedPlaying && stage === "playing" && !isFading ? "video-visible" : ""} ${isFading ? "video-fading" : ""}`}
-        poster="/images/envelope/seal-cover.jpeg"
+        poster="/images/envelope/seal-cover.webp"
         playsInline
         preload="auto"
         onError={() => {
@@ -95,7 +95,7 @@ export default function Envelope({
         aria-hidden="true"
       >
         <source src="/images/envelope/opening-mobile.mp4" type="video/mp4" media="(max-width: 600px)" />
-        <source src="/images/envelope/opening-browser.webm" type="video/webm" />
+        <source src="/images/envelope/opening-mobile.mp4" type="video/webm" />
       </video>
 
       {stage === "playing" && (

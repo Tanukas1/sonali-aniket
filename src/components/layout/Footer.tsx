@@ -7,7 +7,7 @@ export default function Footer() {
       <p>We can’t wait to celebrate with you.</p>
       <p>Your presence will make our day all the more special.</p>
       <small>WITH LOVE &amp; WARMEST WISHES</small>
-      <span className="closing-families">The Malhotra &amp; Verma families</span>
+      <span className="closing-families">The Sinha &amp; Verma families</span>
       <span className="closing-last-line">
         Two families, one beautiful beginning — see you there.
       </span>
